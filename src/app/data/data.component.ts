@@ -6,10 +6,11 @@ import {FakeService} from "../services/fake.service";
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.css']
 })
-export class DataComponent {
+export class DataComponent implements OnInit {
 
   serviceData: any;
   errorMessage: any;
+  status: boolean = false;
 
   constructor(private fakeService: FakeService) {}
 
@@ -30,6 +31,10 @@ export class DataComponent {
 
   methodToThrowAnException() {
     throw new Error ('Exception test');
+  }
+
+  changeStatus() {
+    this.status = !this.status;
   }
 
 }

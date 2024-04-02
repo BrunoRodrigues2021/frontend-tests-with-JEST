@@ -31,6 +31,12 @@ describe('DataComponent', () => {
       expect(component).toBeTruthy();
     });
 
+    it('should successfully change status after clicking the button', () => {
+      component.changeStatus();
+
+      expect(component.status).toBe(true);
+    })
+
     it('should successfully get data from fake service', () => {
       const expectedResponse = {
         "id": 1,
